@@ -1,3 +1,25 @@
+html{
+    height: 100%;
+}
 body{
-    background-color: black;
+    background-color: hsl(279, 100%, 97%);
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(assets/images/background-pattern-desktop.svg);
+    background-repeat:no-repeat;
+    background-size: 100% auto
+}
+main{
+    width: 50%;
+    height: 70%;
+    background-color: hsl(0, 0%, 100%);
+    margin:30px;
+
+}
+
+.faq-title{
+    display: flex;
+    flex-direction: row;
 }
