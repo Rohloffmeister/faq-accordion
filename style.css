@@ -1,25 +1,134 @@
-html{
-    height: 100%;
+@font-face {
+  font-family: "WorksansItalic";
+  src: url(assets/fonts/WorkSans-Italic-VariableFont_wght.ttf);
 }
-body{
-    background-color: hsl(279, 100%, 97%);
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url(assets/images/background-pattern-desktop.svg);
-    background-repeat:no-repeat;
-    background-size: 100% auto
-}
-main{
-    width: 50%;
-    height: 70%;
-    background-color: hsl(0, 0%, 100%);
-    margin:30px;
-
+@font-face {
+  font-family: "Worksans";
+  src: url(assets/fonts/WorkSans-VariableFont_wght.ttf);
 }
 
-.faq-title{
+html {
+
+  font-family: "Worksans", sans-serif;
+}
+body {
+  background-color: hsl(279, 100%, 97%);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(assets/images/background-pattern-desktop.svg);
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+}
+main {
+  position:absolute;
+  top:50%;
+  left:50%;
+  min-width: 500px;
+  width: 50%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+
+  height: auto;
+  background-color: hsl(0, 0%, 100%);
+  margin: 30px;
+  padding: 2%;
+  border-radius: 30px;
+}
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  gap: 20px;
+  align-items: center;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+.faq-title {
+  display: flex;
+  position:relative;
+  font-size: 1em;
+  flex-direction: row;
+  justify-content: space-between;
+  color: hsl(292, 42%, 14%);
+}
+.faq-title:hover {
+  color: hsl(274, 43%, 45%);
+}
+.faq-title h2 {
+  margin-bottom: 10px;
+  inline-size: 70%;
+}
+input[type="checkbox"] {
+
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  position: absolute;
+}
+input[type="checkbox"] + label {
+  background-image: url(assets/images/icon-plus.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  height: auto;
+  width: 32px;
+}
+input[type="checkbox"]:checked + label {
+  background-image: url(assets/images/icon-minus.svg);
+}
+
+input[type="checkbox"]:checked + label {
+  display: block !important;
+}
+
+.faq-content {
+  display: none;
+  font-size: 1.15em;
+  color: hsl(292, 16%, 49%);
+  line-height: 1.4;
+}
+
+.faq-title:has(input[type="checkbox"]:checked) + .faq-content {
+  display: block;
+}
+
+.content-divider {
+  margin-top: 20px;
+  border-top: 1px solid hsl(240, 5%, 91%);
+}
+
+/* Media Queries */
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.4em;
+  }
+  body{
+    background-image: url(assets/images/background-pattern-mobile.svg);
+  }
+  main {
+    min-height: 50%;
+    width: 90%;
+    max-width: 100%;
+    min-width: unset;
+    margin: 0;
+
+}
+.faq{
+    margin-top:auto;
+    margin-bottom:auto;
+    height: auto;
     display: flex;
-    flex-direction: row;
+    justify-content: space-between;
+    flex-direction: column;
+}
+    .faq-title h2 {
+        font-size: 1em;
+    }
+    .faq-content {
+        font-size: 1em;
+    }
 }
